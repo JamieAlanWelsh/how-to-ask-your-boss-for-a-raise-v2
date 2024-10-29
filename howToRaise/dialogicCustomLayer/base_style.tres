@@ -36,6 +36,7 @@ scene = ExtResource("5_qmfa8")
 overrides = {
 "box_color_custom": "Color(1, 0.962799, 0.910156, 1)",
 "box_color_use_global": "false",
+"box_panel": "\"res://dialogicCustomLayer/upperTextbox/bordered.tres\"",
 "normal_font": "\"res://assets/fonts/PixelOperator8.ttf\"",
 "text_custom_color": "Color(0.227451, 0.227451, 0.313726, 1)",
 "text_use_global_color": "false",
@@ -88,4 +89,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_ree41")]([])
-metadata/_latest_layer = "15"
+metadata/_latest_layer = "13"
