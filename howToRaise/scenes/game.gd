@@ -12,6 +12,7 @@ func _ready():
 	load("res://dialogicCustomLayer/base_style.tres").prepare()
 	Dialogic.preload_timeline("res://dialog/timelines/enter_missY_office.dtl")
 	Dialogic.preload_timeline("res://dialog/timelines/missY_timeline.dtl")
+	print('DOORS!')
 
 
 # Gets a gameover signal from dialogic conversation
