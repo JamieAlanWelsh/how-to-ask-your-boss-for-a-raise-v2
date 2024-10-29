@@ -1,0 +1,10 @@
+You approach Miss Y nonchalantly, looks like she's in a bad mood again...
+- Ask how her day is going
+	She is tired and stressed, life at home has been very hard it seems
+- Try to distract her | [if true == true]
+	if {has_apple}:
+		set {has_apple} = false
+		You gave her an apple
+	else:
+		She kills you, you are DEAD.
+		[signal arg="gameover"]
