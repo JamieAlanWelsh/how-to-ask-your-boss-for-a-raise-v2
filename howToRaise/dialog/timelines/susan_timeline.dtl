@@ -59,5 +59,6 @@ Wow, I think I just threw up in my mouth, nice one!
 [signal arg="susan_over"]
 [end_timeline]
 label gameover
+[wait time="2.0"]
 With your confidence in shambles, the thought of asking for a raise seems utterly futile. Maybe you can chalk it up for another day... if you can ever work up the nerve again.
 [signal arg="gameover"]
