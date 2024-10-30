@@ -40,8 +40,8 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ud1x"]
-size = Vector2(64, 47.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_8mtkm"]
+radius = 18.0
 
 [node name="SusanNpc" type="Node2D"]
 script = ExtResource("1_l5c6x")
@@ -55,5 +55,5 @@ autoplay = "idle"
 action_name = "talk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, -11)
-shape = SubResource("RectangleShape2D_6ud1x")
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_8mtkm")

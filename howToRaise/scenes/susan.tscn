@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://cgimt62ucwid0"]
+
+[ext_resource type="Texture2D" uid="uid://bh6ldasfmr2b6" path="res://assets/sprites/slime_purple.png" id="1_34h5v"]
+[ext_resource type="Script" path="res://scripts/susan.gd" id="2_ns42f"]
+[ext_resource type="PackedScene" uid="uid://dlu0t5hq054tk" path="res://interaction/interaction area/interaction_area.tscn" id="2_v1xg6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhibj"]
+atlas = ExtResource("1_34h5v")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki3al"]
+atlas = ExtResource("1_34h5v")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p202"]
+atlas = ExtResource("1_34h5v")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccbgt"]
+atlas = ExtResource("1_34h5v")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_spvpe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhibj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki3al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7p202")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccbgt")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j8qis"]
+radius = 19.0
+
+[node name="Susan" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_spvpe")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.945142
+script = ExtResource("2_ns42f")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_v1xg6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_j8qis")

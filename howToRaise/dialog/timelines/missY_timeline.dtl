@@ -29,6 +29,7 @@ Yikes… even you have to admit, that’s a new low.
 				jump gameover
 	else:
 		jump gameover
+[wait time="1.0"]
 [end_timeline]
 label gameover
 Miss Y erupts in fury. Before you can so much as blink, you're flipped upside down, and your face makes an unfortunate acquaintance with her desk. The last thing you register is the hardwood’s warm embrace before everything fades to black.

@@ -7,6 +7,5 @@ Oh hey, it's Susan! Seems she's in the midst of brewing some coffee...  You shou
 		With your confidence in shambles, the thought of asking for a raise seems utterly futile. Maybe you can chalk it up for another day... if you can ever work up the nerve again.
 		[signal arg="gameover"]
 	- Alright fine, let's do this!
-		[wait time="1.0"]
 - Here goes nothing...
-	[wait time="1.0"]
+[wait time="1.0"]

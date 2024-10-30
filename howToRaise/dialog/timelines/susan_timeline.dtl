@@ -17,6 +17,7 @@ Wait, you don't even drink coffee, what were you thinking?!
 					That definitely looks like some kind of beverage...
 					[wait time="2.0"]
 					Susan smiles at you sweetly, smooth moves!
+					jump coffeewin
 				- A splash
 					jump coffee2
 				- Half a carton ought to do it
@@ -51,12 +52,14 @@ Wow, I think I just threw up in my mouth, nice one!
 					Okay, I play peace sign, declaring the war finally over! Let the trumpets sound and the confetti rain down - peace has been restored!
 					[wait time="2.0"]
 					By the way, though I’m merely a voice in your head\: you should totally steal Susan’s coffee. Trust me, it’ll prove invaluable. Who knows what kind of caffeinated wisdom awaits?
+					jump coffeewin
 			- Paper
 				jump rps
 			- Scissors
 				jump rps
+label coffeewin
 # Signal should prevent player from reinitiating timeline
-[signal arg="susan_over"]
+[signal arg="coffeewin"]
 [end_timeline]
 label gameover
 [wait time="2.0"]
