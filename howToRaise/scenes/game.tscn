@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://cmbd4gq8lgwrb"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4wige"]
-[ext_resource type="PackedScene" uid="uid://cjrbcm6qsjdn1" path="res://scenes/apple.tscn" id="1_j7y3i"]
+[ext_resource type="PackedScene" uid="uid://cjrbcm6qsjdn1" path="res://scenes/coffee.tscn" id="1_j7y3i"]
 [ext_resource type="PackedScene" uid="uid://bq1cqrjfjr5q7" path="res://scenes/player.tscn" id="1_suf84"]
 [ext_resource type="Script" path="res://scripts/room_transition_camera.gd" id="2_0wr3o"]
 [ext_resource type="Texture2D" uid="uid://b0pulgkodd57a" path="res://assets/sprites/Modern_Office_16x16.png" id="4_rmqr0"]
@@ -1785,7 +1785,7 @@ text = "You Failed
 
 Press R to Restart"
 
-[node name="Apple" parent="." instance=ExtResource("1_j7y3i")]
+[node name="Coffee" parent="." instance=ExtResource("1_j7y3i")]
 position = Vector2(-297.504, 43.406)
 region_rect = Rect2(0, 16, 16, 16)
 

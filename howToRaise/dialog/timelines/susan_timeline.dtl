@@ -1,3 +1,4 @@
+[signal arg="start"]
 You approach Susan. She glances up, flashing you a brief smile.\
 [br]\
 Well, this was a brilliant idea... what on earth are you going to do now?!
@@ -60,6 +61,8 @@ Wow, I think I just threw up in my mouth, nice one!
 label coffeewin
 # Signal should prevent player from reinitiating timeline
 [signal arg="coffeewin"]
+[signal arg="end"]
+[wait time="1.0"]
 [end_timeline]
 label gameover
 [wait time="2.0"]

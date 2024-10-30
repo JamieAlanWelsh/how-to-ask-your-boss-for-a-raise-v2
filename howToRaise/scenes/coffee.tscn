@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bltsphiu44pc7" path="res://assets/sprites/fruit.png" id="1_50o4p"]
 [ext_resource type="PackedScene" uid="uid://dlu0t5hq054tk" path="res://interaction/interaction area/interaction_area.tscn" id="2_0aeeb"]
-[ext_resource type="Script" path="res://scripts/apple.gd" id="2_41gda"]
+[ext_resource type="Script" path="res://scripts/coffee.gd" id="2_41gda"]
 [ext_resource type="Resource" uid="uid://c2aot1oa8nkpg" path="res://inventory/items/gold_apple.tres" id="3_chc3y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cecij"]

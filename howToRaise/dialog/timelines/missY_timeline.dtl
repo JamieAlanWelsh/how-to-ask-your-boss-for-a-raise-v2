@@ -1,3 +1,4 @@
+[signal arg="start"]
 You saunter up to Miss Y with casual indifference - though, judging by her expression, it's clearly another one of those days…
 - Ask how her day is going
 	She is tired and stressed, life at home has been very hard it seems... Maybe a little effort on our part could lift her spirits?
@@ -30,6 +31,7 @@ Yikes… even you have to admit, that’s a new low.
 	else:
 		jump gameover
 [wait time="1.0"]
+[signal arg="end"]
 [end_timeline]
 label gameover
 Miss Y erupts in fury. Before you can so much as blink, you're flipped upside down, and your face makes an unfortunate acquaintance with her desk. The last thing you register is the hardwood’s warm embrace before everything fades to black.

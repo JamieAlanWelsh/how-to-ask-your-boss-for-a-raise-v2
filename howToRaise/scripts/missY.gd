@@ -7,6 +7,8 @@ extends Node2D
 
 # item that NPC can use from player inventory
 var item_idx = 2
+# prevent player from initiating dialogue during dialogue
+var dialogRunning = false
 
 
 # if the line isn't enough characters then the code will break
@@ -25,16 +27,28 @@ const lines_with_item: Array[String] = [
 # example on how to receive dialogic signal
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
+	Dialogic.signal_event.connect(_DialogicSignalReceiver)
+
+
+# gets signals from dialogic timelines
+func _DialogicSignalReceiver(arg: String):
+	if arg == "start":
+		dialogRunning = true
+		print('miss Y dialog running: ', dialogRunning)
+	elif arg == "end":
+		dialogRunning = false
+		print('miss Y dialog running: ', dialogRunning)
 
 
 func _on_interact():
-	if playerInv.check_for_item(item_idx):
-		Dialogic.VAR.has_apple = true
-		# communicates with Dialogic to say that item is present
-		DialogManager.start_dialog(global_position, lines_with_item)
-		#await DialogManager.dialog_finished
-		playerInv.use(item_idx)
-	else:
-		DialogManager.start_dialog(global_position, lines)
-		#await DialogManager.dialog_finished
-	Dialogic.start("missY_timeline")
+	if !dialogRunning:
+		if playerInv.check_for_item(item_idx):
+			Dialogic.VAR.has_apple = true
+			# communicates with Dialogic to say that item is present
+			DialogManager.start_dialog(global_position, lines_with_item)
+			#await DialogManager.dialog_finished
+			playerInv.use(item_idx)
+		else:
+			DialogManager.start_dialog(global_position, lines)
+			#await DialogManager.dialog_finished
+		Dialogic.start("missY_timeline")

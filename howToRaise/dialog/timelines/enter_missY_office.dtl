@@ -1,2 +1,4 @@
+[signal arg="start"]
 You walk into Miss Y's office. Hmm, what are those mysterious photos on her desk...?
+[signal arg="end"]
 [wait time="1.0"]
