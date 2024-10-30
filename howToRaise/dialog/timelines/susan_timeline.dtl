@@ -1,0 +1,63 @@
+You approach Susan. She glances up, flashing you a brief smile.\
+[br]\
+Well, this was a brilliant idea... what on earth are you going to do now?!
+- Relax, I got this
+	Alright hot stuff, let him cook!
+	- Make some coffee
+		You stand beside Susan and flick the kettle on with a touch of flair.\
+[br]\
+Wait, you don't even drink coffee, what were you thinking?!
+		- Act natural!
+			People usually add a scoop of this right?
+			- Naah
+				label coffee
+				What about milk, is it trendy to have milk these days...?
+				- Nope
+					label coffee2
+					That definitely looks like some kind of beverage...
+					[wait time="2.0"]
+					Susan smiles at you sweetly, smooth moves!
+				- A splash
+					jump coffee2
+				- Half a carton ought to do it
+					jump coffee2
+			- One scoop
+				jump coffee
+			- Pour it in baby!
+				jump coffee
+		- Panic and make a rapid exit!
+			jump gameover
+	- Lean on the table and flash a grin
+		She laughs awkwardly and takes a step away.\
+[br]\
+Wow, I think I just threw up in my mouth, nice one!
+		- You're right, I suck...
+			jump gameover
+		- Hey, shut up!
+			jump monologue
+- What the hell! You told me to approach her!
+	Oh, wow, really? So this is all my fault? I’m just trying to be encouraging here man. Maybe if you weren’t so painfully awkward, I wouldn't feel like I'm pulling out my teeth here!
+	- You're right, I suck...
+		jump gameover
+	- Hey, shut up!
+		label monologue
+		Woah, don't take it out on me buddy, I'm just a voice in your head
+		- Wait, what's happening...?
+			Let's play rock paper scissors
+			- Rock
+				label rps
+				I play laser, I win.
+				- You can't do that!
+					Okay, I play peace sign, declaring the war finally over! Let the trumpets sound and the confetti rain down - peace has been restored!
+					[wait time="2.0"]
+					By the way, though I’m merely a voice in your head\: you should totally steal Susan’s coffee. Trust me, it’ll prove invaluable. Who knows what kind of caffeinated wisdom awaits?
+			- Paper
+				jump rps
+			- Scissors
+				jump rps
+# Signal should prevent player from reinitiating timeline
+[signal arg="susan_over"]
+[end_timeline]
+label gameover
+With your confidence in shambles, the thought of asking for a raise seems utterly futile. Maybe you can chalk it up for another day... if you can ever work up the nerve again.
+[signal arg="gameover"]

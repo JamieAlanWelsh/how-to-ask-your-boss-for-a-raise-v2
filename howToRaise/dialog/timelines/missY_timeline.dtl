@@ -1,10 +1,35 @@
-You approach Miss Y nonchalantly, looks like she's in a bad mood again...
+You saunter up to Miss Y with casual indifference - though, judging by her expression, it's clearly another one of those days…
 - Ask how her day is going
-	She is tired and stressed, life at home has been very hard it seems
+	She is tired and stressed, life at home has been very hard it seems... Maybe a little effort on our part could lift her spirits?
+	- I know what to do
+		She releases an exaggerated sigh, her gaze turning syrupy, hope glinting in her eyes that you might improve her day.\
+Honestly... when she’s not busy being a storm cloud, she's almost charming.
+		- Give her a hug
+			Miss Y erupts in fury. Before you can so much as blink, you're flipped upside down, and your face makes an unfortunate acquaintance with her desk. The last thing you register is the hardwood’s warm embrace before everything fades to black.
+			[signal arg="gameover"]
+		- Show her a funny video
+			You present her with a collection of ridiculous cat videos you curated during your morning toilet run. Together, you share a laugh, and - surprise, surprise - she actually looks a bit cheerier now.
+	- Nah, I'm good
+		Ah yeah, that makes sense, give her some space, I guess...?
 - Try to distract her | [if true == true]
 	if {has_apple}:
 		set {has_apple} = false
-		You gave her an apple
+		Seizing the moment, you “accidentally” send a cascade of hot coffee splashing across her face. She roars in pain like a wounded beast, and - well, if ever there was a time to make your move, this is it!
+		- Grab the photos
+			jump gameover
+		- Use something!
+			As her hands flail wildly, you instinctively reach for the nearest object - a framed photo of her husband - oh please, no!
+			- Less thinking, more smashing!
+				You bring the photo down over her head. She collapses to the ground.\
+[br]\
+Yikes… even you have to admit, that’s a new low.
+				# signal triggers death animation and allows player to grab photos
+				[signal arg="miss_y_down"]
+			- Maybe the phone instead...
+				jump gameover
 	else:
-		She kills you, you are DEAD.
-		[signal arg="gameover"]
+		jump gameover
+[end_timeline]
+label gameover
+Miss Y erupts in fury. Before you can so much as blink, you're flipped upside down, and your face makes an unfortunate acquaintance with her desk. The last thing you register is the hardwood’s warm embrace before everything fades to black.
+[signal arg="gameover"]

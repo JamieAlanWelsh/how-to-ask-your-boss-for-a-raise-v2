@@ -1,0 +1,9 @@
+You wander into the kitchen.
+Oh hey, it's Susan! Seems she's in the midst of brewing some coffee...  You should talk to her
+- No waay!
+	Come on... Stop being such a baby
+	- No, I can't do it...
+		With your confidence in shambles, the thought of asking for a raise seems utterly futile. Maybe you can chalk it up for another day... if you can ever work up the nerve again.
+		[signal arg="gameover"]
+	- Alright fine, let's do this!
+- Here goes nothing...
