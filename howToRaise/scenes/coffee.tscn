@@ -1,21 +1,24 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjrbcm6qsjdn1"]
 
-[ext_resource type="Texture2D" uid="uid://bltsphiu44pc7" path="res://assets/sprites/fruit.png" id="1_50o4p"]
+[ext_resource type="Texture2D" uid="uid://dbar7mirhvttp" path="res://assets/sprites/pick_ups.png" id="1_hlivh"]
 [ext_resource type="PackedScene" uid="uid://dlu0t5hq054tk" path="res://interaction/interaction area/interaction_area.tscn" id="2_0aeeb"]
 [ext_resource type="Script" path="res://scripts/coffee.gd" id="2_41gda"]
-[ext_resource type="Resource" uid="uid://c2aot1oa8nkpg" path="res://inventory/items/gold_apple.tres" id="3_chc3y"]
+[ext_resource type="Resource" uid="uid://c2aot1oa8nkpg" path="res://inventory/items/coffee.tres" id="3_chc3y"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cecij"]
-radius = 13.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqm1t"]
+size = Vector2(20, 38)
 
 [node name="Apple" type="Sprite2D"]
-texture = ExtResource("1_50o4p")
+texture = ExtResource("1_hlivh")
 region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
+region_rect = Rect2(0, 16, 16, 16)
 script = ExtResource("2_41gda")
 item = ExtResource("3_chc3y")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_0aeeb")]
+position = Vector2(0, -4)
+action_name = "Coffee!"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-shape = SubResource("CircleShape2D_cecij")
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_iqm1t")

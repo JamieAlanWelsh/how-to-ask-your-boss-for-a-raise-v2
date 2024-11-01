@@ -52,7 +52,8 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_ejsss")]
-action_name = "talk"
+position = Vector2(0, -4)
+action_name = "Sigh..."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, 6)

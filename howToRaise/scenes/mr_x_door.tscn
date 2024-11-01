@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgdgep4886abb"]
+
+[ext_resource type="Script" path="res://scripts/mr_x_door.gd" id="1_1ge7r"]
+[ext_resource type="PackedScene" uid="uid://dlu0t5hq054tk" path="res://interaction/interaction area/interaction_area.tscn" id="1_asxdv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbkay"]
+size = Vector2(24.5, 51.5)
+
+[node name="MrXDoor" type="Node2D"]
+position = Vector2(-327.504, 16.406)
+script = ExtResource("1_1ge7r")
+
+[node name="interactionArea" parent="." instance=ExtResource("1_asxdv")]
+action_name = "Mr. X"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactionArea"]
+position = Vector2(-0.25, 19)
+shape = SubResource("RectangleShape2D_cbkay")

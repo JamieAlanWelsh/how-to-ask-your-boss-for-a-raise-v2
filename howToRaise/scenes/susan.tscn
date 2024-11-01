@@ -51,7 +51,8 @@ frame_progress = 0.945142
 script = ExtResource("2_ns42f")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_v1xg6")]
+position = Vector2(0, -4)
+action_name = "Hey!"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_j8qis")

@@ -4,13 +4,19 @@ class_name RoomTransitionCamera
 
 const HORIZONTAL_OFFSET : int = -64
 const VERTICAL_OFFSET : int = 0
+const RoomShift = 63
 
 
 @onready var m_CameraHorizontalMovement : int = (get_viewport_rect().size.x - HORIZONTAL_OFFSET) / 4
+@onready var player = get_tree().get_first_node_in_group("player")
 
 
 # initialise the current room the camera is pointing at
 var m_CurrentRoom : Vector2 = Vector2.ZERO
+# prevent warping off map
+var roomShiftCount = 0
+var rightMost = 1
+var leftMost = -2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,10 +43,16 @@ func _pauseCollisions() -> void:
 
 
 func _onBodyEnteredRight(body: Node2D) -> void:
-	_updateCameraPosition(Vector2.RIGHT)
-	#_pauseCollisions()
+	if roomShiftCount < rightMost:
+		roomShiftCount += 1
+		_updateCameraPosition(Vector2.RIGHT)
+		player.position.x += RoomShift
+		#_pauseCollisions()
 
 
 func _OnBodyEnteredLeft(body: Node2D) -> void:
-	_updateCameraPosition(Vector2.LEFT)
-	#_pauseCollisions()
+	if roomShiftCount > leftMost:
+		roomShiftCount -= 1
+		_updateCameraPosition(Vector2.LEFT)
+		player.position.x -= RoomShift
+		#_pauseCollisions()

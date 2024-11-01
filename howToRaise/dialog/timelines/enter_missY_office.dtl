@@ -1,4 +1,4 @@
 [signal arg="start"]
-You walk into Miss Y's office. Hmm, what are those mysterious photos on her desk...?
+You step into Miss Y’s office and pause, noticing the corner of some photos slipped carelessly beneath her stack of documents. Curious…
 [signal arg="end"]
 [wait time="1.0"]

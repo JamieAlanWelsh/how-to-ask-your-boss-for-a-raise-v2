@@ -4,7 +4,7 @@ extends Node2D
 @onready var label = $Label
 
 
-const base_text = "[SPACE] "
+const base_text = ""
 
 # holds all interaction areas that can be interated with
 # an array is necessary because the player may be in multiple interaction areas at once

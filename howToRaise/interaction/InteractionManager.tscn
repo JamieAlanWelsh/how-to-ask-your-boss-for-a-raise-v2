@@ -1,23 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://be84mafwxh37d"]
+[gd_scene load_steps=5 format=3 uid="uid://be84mafwxh37d"]
 
 [ext_resource type="Script" path="res://interaction/interactionManager.gd" id="1_1c6w1"]
 [ext_resource type="FontFile" uid="uid://ctphaqwy2cujd" path="res://assets/fonts/PixelOperator8.ttf" id="2_jgqdo"]
+[ext_resource type="Texture2D" uid="uid://cbcjf6o3q3ewx" path="res://assets/sprites/dialogue_box.png" id="3_dmsqn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ainx"]
+texture = ExtResource("3_dmsqn")
+texture_margin_left = 2.0
+texture_margin_top = 10.0
+texture_margin_right = 2.0
+texture_margin_bottom = 10.0
 
 [node name="InteractionManager" type="Node2D"]
 script = ExtResource("1_1c6w1")
 
 [node name="Label" type="Label" parent="."]
 z_index = 20
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-offset_left = -76.0
-offset_top = 1.0
-offset_right = 76.0
-offset_bottom = 24.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -36.0
+offset_right = 24.0
+offset_bottom = -4.0
 grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.227451, 0.227451, 0.313726, 1)
 theme_override_fonts/font = ExtResource("2_jgqdo")
 theme_override_font_sizes/font_size = 8
-text = "[ INTERACT ]"
+theme_override_styles/normal = SubResource("StyleBoxTexture_4ainx")
+text = "text"
 horizontal_alignment = 1
 vertical_alignment = 1

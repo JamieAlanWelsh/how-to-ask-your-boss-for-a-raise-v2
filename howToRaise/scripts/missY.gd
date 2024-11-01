@@ -9,6 +9,7 @@ extends Node2D
 var item_idx = 2
 # prevent player from initiating dialogue during dialogue
 var dialogRunning = false
+var spoken = false
 
 
 # if the line isn't enough characters then the code will break
@@ -34,21 +35,23 @@ func _ready():
 func _DialogicSignalReceiver(arg: String):
 	if arg == "start":
 		dialogRunning = true
-		print('miss Y dialog running: ', dialogRunning)
 	elif arg == "end":
 		dialogRunning = false
-		print('miss Y dialog running: ', dialogRunning)
+	elif arg == "miss_y_down":
+		spoken = true
+		interaction_area.monitoring = false
+		# switch animation to death
 
 
 func _on_interact():
-	if !dialogRunning:
+	if !dialogRunning && !spoken:
 		if playerInv.check_for_item(item_idx):
 			Dialogic.VAR.has_apple = true
 			# communicates with Dialogic to say that item is present
-			DialogManager.start_dialog(global_position, lines_with_item)
+			#DialogManager.start_dialog(global_position, lines_with_item)
 			#await DialogManager.dialog_finished
 			playerInv.use(item_idx)
-		else:
-			DialogManager.start_dialog(global_position, lines)
+		#else:
+			#DialogManager.start_dialog(global_position, lines)
 			#await DialogManager.dialog_finished
 		Dialogic.start("missY_timeline")

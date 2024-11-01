@@ -30,12 +30,14 @@ directories/dtl_directory={
 "enter_kitchen": "res://dialog/timelines/enter_kitchen.dtl",
 "enter_missY_office": "res://dialog/timelines/enter_missY_office.dtl",
 "missY_timeline": "res://dialog/timelines/missY_timeline.dtl",
+"mrX_door": "res://dialog/timelines/mrX_door.dtl",
 "susan_timeline": "res://dialog/timelines/susan_timeline.dtl"
 }
 layout/style_list=["res://dialogicCustomLayer/base_style.tres"]
 layout/default_style="res://dialogicCustomLayer/base_style.tres"
 variables={
-"has_apple": false
+"has_apple": false,
+"has_photos": false
 }
 glossary/default_case_sensitive=true
 extensions_folder="res://addons/dialogic_additions"

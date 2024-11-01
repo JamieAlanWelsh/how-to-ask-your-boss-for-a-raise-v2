@@ -1865,7 +1865,7 @@ shape = SubResource("RectangleShape2D_3rb7a")
 position = Vector2(-663.504, 54.406)
 
 [node name="MrXDoor" parent="." instance=ExtResource("12_3edhi")]
-position = Vector2(-327.504, 17.406)
+position = Vector2(-327.504, 12.406)
 
 [connection signal="body_entered" from="RoomTransitionCamera/CollisionAreaRight" to="RoomTransitionCamera" method="_onBodyEnteredRight"]
 [connection signal="body_entered" from="RoomTransitionCamera/CollisionAreaLeft" to="RoomTransitionCamera" method="_OnBodyEnteredLeft"]

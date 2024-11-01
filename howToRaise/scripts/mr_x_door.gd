@@ -1,11 +1,9 @@
-extends AnimatedSprite2D
+extends Node2D
 
-
-@onready var interaction_area: InteractionArea = $InteractionArea
+@onready var interaction_area: InteractionArea = $interactionArea
 
 # prevent player from initiating dialogue during dialogue
 var dialogRunning = false
-var spoken = false
 
 
 # example on how to receive dialogic signal
@@ -20,12 +18,8 @@ func _DialogicSignalReceiver(arg: String):
 		dialogRunning = true
 	elif arg == "end":
 		dialogRunning = false
-	elif arg == "coffeewin":
-		spoken = true
-		interaction_area.monitoring = false
-		# change animation to susan smiling
 
 
 func _on_interact():
-	if !dialogRunning && !spoken:
-		Dialogic.start("susan_timeline")
+	if !dialogRunning:
+		Dialogic.start("mrX_door")

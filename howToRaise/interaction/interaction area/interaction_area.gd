@@ -2,7 +2,7 @@ extends Area2D
 class_name InteractionArea
 
 # If a variable is exported it means we can edit the value in the inspector
-@export var action_name: String = "interact"
+@export var action_name: String = "test"
 
 # A callable is a type of variable that holds a function
 # Any object we make with an interaction can overwrite this function and provide a new interaction

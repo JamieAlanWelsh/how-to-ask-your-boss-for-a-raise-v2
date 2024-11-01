@@ -1,0 +1,10 @@
+[signal arg="start"]
+Your boss, Mr. X's office... 
+- Knock
+	if {has_photos} == true:
+		Mr. X looks up affirmatively, ushering you to enter
+	else:
+		Mr. X Doesn't look up from his desk, he is clearly busy right now.
+- Maybe later
+[signal arg="end"]
+[wait time="1.0"]

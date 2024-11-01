@@ -28,6 +28,10 @@ func _DialogicSignalReceiver(arg: String):
 		# make coffee visible and allow player to pick it up
 		print('grab that coffee!')
 		coffee_object.visible = true
+	#elif arg == "start":
+		#pause_movement()
+	#elif arg == "end":
+		#start_movement()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -16,7 +16,7 @@ Wait, you don't even drink coffee, what were you thinking?!
 				- Nope
 					label coffee2
 					That definitely looks like some kind of beverage...
-					[wait time="2.0"]
+					[wait time="1.5"]
 					Susan smiles at you sweetly, smooth moves!
 					jump coffeewin
 				- A splash
@@ -51,7 +51,7 @@ Wow, I think I just threw up in my mouth, nice one!
 				I play laser, I win.
 				- You can't do that!
 					Okay, I play peace sign, declaring the war finally over! Let the trumpets sound and the confetti rain down - peace has been restored!
-					[wait time="2.0"]
+					[wait time="1.5"]
 					By the way, though I’m merely a voice in your head\: you should totally steal Susan’s coffee. Trust me, it’ll prove invaluable. Who knows what kind of caffeinated wisdom awaits?
 					jump coffeewin
 			- Paper
