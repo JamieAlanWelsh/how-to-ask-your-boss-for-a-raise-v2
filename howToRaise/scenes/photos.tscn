@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk3a11f4hcl2h"]
+[gd_scene load_steps=4 format=3 uid="uid://bk3a11f4hcl2h"]
 
 [ext_resource type="Texture2D" uid="uid://dbar7mirhvttp" path="res://assets/sprites/pick_ups.png" id="1_rr1cn"]
+[ext_resource type="PackedScene" uid="uid://dlu0t5hq054tk" path="res://interaction/interaction area/interaction_area.tscn" id="2_i0xv8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4hyj"]
+size = Vector2(23, 43)
 
 [node name="Photos" type="Sprite2D"]
 texture = ExtResource("1_rr1cn")
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_i0xv8")]
+action_name = "Photos!"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_c4hyj")

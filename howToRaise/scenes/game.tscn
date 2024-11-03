@@ -1916,7 +1916,7 @@ position = Vector2(-663.504, 54.406)
 position = Vector2(-600.504, 36.406)
 
 [node name="Photos" parent="." instance=ExtResource("14_rumwe")]
-position = Vector2(379.496, 1.406)
+position = Vector2(403.496, 40.406)
 
 [connection signal="body_entered" from="RoomTransitionCamera/CollisionAreaRight" to="RoomTransitionCamera" method="_onBodyEnteredRight"]
 [connection signal="body_entered" from="RoomTransitionCamera/CollisionAreaLeft" to="RoomTransitionCamera" method="_OnBodyEnteredLeft"]
