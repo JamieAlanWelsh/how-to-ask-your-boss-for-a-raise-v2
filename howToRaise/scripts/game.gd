@@ -3,6 +3,7 @@ extends Node2D
 @onready var red_overlay = $CanvasLayer/RedOverlay
 @onready var restart_button = $CanvasLayer/RedOverlay/RestartButton
 @onready var coffee_object = $Coffee
+@onready var mrX = $mrXOffice
 
 
 # example on how to receive dialogic signal
@@ -28,10 +29,11 @@ func _DialogicSignalReceiver(arg: String):
 		# make coffee visible and allow player to pick it up
 		print('grab that coffee!')
 		coffee_object.visible = true
-	#elif arg == "start":
-		#pause_movement()
-	#elif arg == "end":
-		#start_movement()
+
+
+# to pass to camera
+func _get_mr_x_pos() -> Vector2:
+	return mrX.position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

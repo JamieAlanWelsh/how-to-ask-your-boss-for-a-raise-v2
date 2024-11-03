@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cmbd4gq8lgwrb"]
+[gd_scene load_steps=28 format=3 uid="uid://cmbd4gq8lgwrb"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4wige"]
 [ext_resource type="PackedScene" uid="uid://cjrbcm6qsjdn1" path="res://scenes/coffee.tscn" id="1_j7y3i"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://cgimt62ucwid0" path="res://scenes/susan.tscn" id="11_bha0l"]
 [ext_resource type="PackedScene" uid="uid://dgdgep4886abb" path="res://scenes/mr_x_door.tscn" id="12_3edhi"]
 [ext_resource type="Texture2D" uid="uid://bh6ldasfmr2b6" path="res://assets/sprites/slime_purple.png" id="13_xic0v"]
-[ext_resource type="PackedScene" uid="uid://bk3a11f4hcl2h" path="res://scenes/photos.tscn" id="14_rumwe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y4eku"]
 texture = ExtResource("4_rmqr0")
@@ -1744,6 +1743,15 @@ texture = ExtResource("5_s0k1y")
 sources/0 = SubResource("TileSetAtlasSource_o7ce3")
 sources/1 = SubResource("TileSetAtlasSource_fh533")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7sgm"]
+size = Vector2(7, 161.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1khl7"]
+size = Vector2(39, 161)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rb7a"]
+size = Vector2(33, 161)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7krm"]
 atlas = ExtResource("13_xic0v")
 region = Rect2(0, 0, 24, 24)
@@ -1779,15 +1787,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7sgm"]
-size = Vector2(7, 161.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1khl7"]
-size = Vector2(39, 161)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rb7a"]
-size = Vector2(33, 161)
 
 [node name="Game" type="Node2D"]
 position = Vector2(144.504, 81.594)
@@ -1834,18 +1833,8 @@ text = "You Failed
 
 Press R to Restart"
 
-[node name="mrXOffice" type="Node2D" parent="."]
-position = Vector2(-304.504, -439.594)
-
-[node name="MrXDoor" parent="." instance=ExtResource("12_3edhi")]
-position = Vector2(-327.504, 17.406)
-
-[node name="mrX" type="AnimatedSprite2D" parent="."]
-position = Vector2(-210.504, -395.594)
-sprite_frames = SubResource("SpriteFrames_7mgvk")
-autoplay = "default"
-frame = 3
-frame_progress = 0.203142
+[node name="Coffee" parent="." instance=ExtResource("1_j7y3i")]
+position = Vector2(-600.504, 36.406)
 
 [node name="RoomTransitionCamera" type="Camera2D" parent="."]
 position = Vector2(0, 8)
@@ -1885,6 +1874,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Player" parent="." instance=ExtResource("1_suf84")]
 position = Vector2(-6.504, -9.594)
 
+[node name="missY" parent="." instance=ExtResource("4_t2q4p")]
+position = Vector2(320.496, 54.406)
+
 [node name="roomCollisions" type="Node2D" parent="."]
 position = Vector2(0, 2)
 script = ExtResource("7_rmks5")
@@ -1906,17 +1898,17 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="roomCollisions/CollisionKitchen"]
 shape = SubResource("RectangleShape2D_3rb7a")
 
-[node name="missY" parent="." instance=ExtResource("4_t2q4p")]
-position = Vector2(320.496, 54.406)
-
 [node name="Susan" parent="." instance=ExtResource("11_bha0l")]
 position = Vector2(-663.504, 54.406)
 
-[node name="Coffee" parent="." instance=ExtResource("1_j7y3i")]
-position = Vector2(-600.504, 36.406)
+[node name="MrXDoor" parent="." instance=ExtResource("12_3edhi")]
+position = Vector2(-327.504, 17.406)
 
-[node name="Photos" parent="." instance=ExtResource("14_rumwe")]
-position = Vector2(379.496, 1.406)
+[node name="mrX" type="AnimatedSprite2D" parent="."]
+position = Vector2(-261.504, -395.594)
+sprite_frames = SubResource("SpriteFrames_7mgvk")
+autoplay = "default"
+frame_progress = 0.809291
 
 [connection signal="body_entered" from="RoomTransitionCamera/CollisionAreaRight" to="RoomTransitionCamera" method="_onBodyEnteredRight"]
 [connection signal="body_entered" from="RoomTransitionCamera/CollisionAreaLeft" to="RoomTransitionCamera" method="_OnBodyEnteredLeft"]

@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var interaction_area: InteractionArea = $interactionArea
 
+
 # prevent player from initiating dialogue during dialogue
 var dialogRunning = false
 

@@ -19,6 +19,9 @@ func _DialogicSignalReceiver(arg: String):
 		is_paused = true
 	elif arg == "end":
 		is_paused = false
+	#elif arg == "enterMrX":
+		#var target_position = Vector2(-21, -25)
+		#position = target_position
 
 
 func _physics_process(delta: float) -> void:

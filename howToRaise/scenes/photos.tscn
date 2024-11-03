@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk3a11f4hcl2h"]
+
+[ext_resource type="Texture2D" uid="uid://dbar7mirhvttp" path="res://assets/sprites/pick_ups.png" id="1_rr1cn"]
+
+[node name="Photos" type="Sprite2D"]
+texture = ExtResource("1_rr1cn")
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)

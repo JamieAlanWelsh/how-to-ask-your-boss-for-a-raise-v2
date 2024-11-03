@@ -9,7 +9,8 @@ const RoomShift = 63
 
 @onready var m_CameraHorizontalMovement : int = (get_viewport_rect().size.x - HORIZONTAL_OFFSET) / 4
 @onready var player = get_tree().get_first_node_in_group("player")
-
+# to get mr X pos
+@onready var root = get_tree().root.get_node("Game")
 
 # initialise the current room the camera is pointing at
 var m_CurrentRoom : Vector2 = Vector2.ZERO
@@ -21,6 +22,16 @@ var leftMost = -2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("m_CameraHorizontalMovement: ", m_CameraHorizontalMovement)
+	Dialogic.signal_event.connect(_DialogicSignalReceiver)
+
+
+# gets signals from dialogic timelines
+func _DialogicSignalReceiver(arg: String):
+	# reposition if mrX door entered
+	if arg == "enterMrX":
+		var mr_x_pos = root._get_mr_x_pos()
+		player.position = mr_x_pos + Vector2(-23,0)
+		position = mr_x_pos
 
 
 # update camera position when player collides with edges
