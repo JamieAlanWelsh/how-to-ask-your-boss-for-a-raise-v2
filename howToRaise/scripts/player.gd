@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var inv: Inv
+@onready var animated_sprite = $AnimatedSprite2D
 
 
 const SPEED = 150.0
@@ -34,6 +35,13 @@ func _physics_process(delta: float) -> void:
 
 	var direction := Input.get_axis("move_left", "move_right")
 	
+	#Flip sprite based on movement direction only when changing direction
+	if direction > 0:
+		animated_sprite.flip_h = false  # Face right
+	elif direction < 0:
+		animated_sprite.flip_h = true   # Face left
+	
+	# apply movement
 	if direction:
 		velocity.x = direction * SPEED
 	else:

@@ -1793,11 +1793,13 @@ layer_0/tile_data = PackedInt32Array(131074, 65536, 10, 196610, 131072, 11, 6553
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorOverlay" type="ColorRect" parent="CanvasLayer"]
+visible = false
 offset_right = 1154.0
 offset_bottom = 644.0
 color = Color(0, 0.713726, 0, 1)
 
 [node name="RestartButton" type="Button" parent="CanvasLayer"]
+visible = false
 offset_left = 233.0
 offset_top = 215.0
 offset_right = 881.0
