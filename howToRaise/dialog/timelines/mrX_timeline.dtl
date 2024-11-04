@@ -1,0 +1,36 @@
+Why should you get a raise?
+- Been with the company for years
+- Involved in a major success
+	And you get on with the professor?
+	- Yes
+		And did you solve his T60 issue?
+		- Yes
+			jump measles
+		- No
+			jump lunch
+	- No
+		label lunch
+		Hmmm, interesting... What was on the lunch menu today?
+		- Eggs
+			Were they off?
+			- Yes
+				jump ask
+			- No
+				jump measles
+		- Fish
+			Did Mr X swallow a bone?
+			- Yes
+				jump 
+			- No
+				jump 
+label measles
+What about Mr X's daughters, does one of them have measles?
+label ask
+You stifle your nerves and present your case, ultimately asking for a raise.
+Are you given reasons for hoping?
+- Yes
+- No
+[wait time="1.0"]
+Six months pass, and you wait patiently, hoping for that promotion... but nothing comes.
+[wait time="1.0"]
+[signal arg="gameover"]
