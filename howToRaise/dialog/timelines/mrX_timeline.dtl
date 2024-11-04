@@ -1,6 +1,8 @@
 Why should you get a raise?
 - Been with the company for years
+	jump professor
 - Involved in a major success
+	label professor
 	And you get on with the professor?
 	- Yes
 		And did you solve his T60 issue?
@@ -20,11 +22,38 @@ Why should you get a raise?
 		- Fish
 			Did Mr X swallow a bone?
 			- Yes
-				jump 
+				jump ask
 			- No
-				jump 
+				jump measles
 label measles
-What about Mr X's daughters, does one of them have measles?
+What about Mr X's daughters, any of them have measles?
+- Yes
+	label measlesInfected
+	Is his face spotty?
+	- Sigh... Yes
+		You make a rapid exit. EMERGENCY! You put Mr X in quarantine for 40 days.
+		jump gameover
+- No
+	Do both his daughters not have measles?
+	- Yes
+		And is the third okay?
+		- Yes
+			It seems the odds are finally in your favor. Now’s the perfect time to make your move - what are you waiting for?
+			- Ask for a raise
+				jump ask
+			- One more thing
+				You stride up to Mr. X’s desk and slap the photos down in front of him. His face pales, eyes widening with desperation as he realises that they reveal explicit evidence of his affair with Miss Y.
+				You know what to do
+				- Blackmail
+					[wait time="1.0"]
+					Apparently, a little blackmail was all it took to nudge Mr. X into finally considering that raise. Who knew it’d be this easy?
+					[wait time="1.0"]
+					[signal arg="gamewin"]
+					[end_timeline]
+		- No
+			jump measlesInfected
+	- No
+		jump measlesInfected
 label ask
 You stifle your nerves and present your case, ultimately asking for a raise.
 Are you given reasons for hoping?
@@ -32,5 +61,6 @@ Are you given reasons for hoping?
 - No
 [wait time="1.0"]
 Six months pass, and you wait patiently, hoping for that promotion... but nothing comes.
+label gameover
 [wait time="1.0"]
 [signal arg="gameover"]
