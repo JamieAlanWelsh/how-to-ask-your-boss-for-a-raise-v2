@@ -30,7 +30,7 @@ func _DialogicSignalReceiver(arg: String):
 	# reposition if mrX door entered
 	if arg == "enterMrX":
 		var mr_x_pos = root._get_mr_x_pos()
-		player.position = mr_x_pos + Vector2(-23,0)
+		player.position = mr_x_pos + Vector2(-23,+30)
 		position = mr_x_pos
 
 

@@ -6,7 +6,7 @@ extends Node2D
 @onready var playerInv = preload("res://inventory/player_inv.tres")
 
 # item that NPC can use from player inventory
-var item_idx = 2
+var item_idx = 0
 # prevent player from initiating dialogue during dialogue
 var dialogRunning = false
 var spoken = false
@@ -40,6 +40,7 @@ func _DialogicSignalReceiver(arg: String):
 	elif arg == "miss_y_down":
 		spoken = true
 		interaction_area.monitoring = false
+		playerInv.use(item_idx)
 		# switch animation to death
 
 
@@ -47,11 +48,4 @@ func _on_interact():
 	if !dialogRunning && !spoken:
 		if playerInv.check_for_item(item_idx):
 			Dialogic.VAR.has_apple = true
-			# communicates with Dialogic to say that item is present
-			#DialogManager.start_dialog(global_position, lines_with_item)
-			#await DialogManager.dialog_finished
-			playerInv.use(item_idx)
-		#else:
-			#DialogManager.start_dialog(global_position, lines)
-			#await DialogManager.dialog_finished
 		Dialogic.start("missY_timeline")

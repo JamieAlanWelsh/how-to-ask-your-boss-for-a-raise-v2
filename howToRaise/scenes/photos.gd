@@ -5,8 +5,7 @@ extends Sprite2D
 @export var item: InvItem
 @onready var playerInv = preload("res://inventory/player_inv.tres")
 
-var inv_insert = 0
-
+var inv_insert = 1
 
 func _ready():
 	visible = false
@@ -17,7 +16,7 @@ func _ready():
 
 # gets signals from dialogic timelines
 func _DialogicSignalReceiver(arg: String):
-	if arg == "coffeewin":
+	if arg == "miss_y_down":
 		visible = true
 		interaction_area.monitoring = true
 

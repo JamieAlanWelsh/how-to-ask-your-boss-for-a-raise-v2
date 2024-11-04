@@ -5,10 +5,8 @@ Your boss, Mr. X's office...
 		Mr. X looks up affirmatively, ushering you to enter
 		[wait time="1.0"]
 		[signal arg="enterMrX"]
-		[end_timeline]
 	else:
 		Mr. X Doesn't look up from his desk, he is clearly busy right now.
-		[signal arg="enterMrX"]
 - Maybe later
 [signal arg="end"]
 [wait time="1.0"]

@@ -60,9 +60,9 @@ Wow, I think I just threw up in my mouth, nice one!
 				jump rps
 label coffeewin
 # Signal should prevent player from reinitiating timeline
-[signal arg="coffeewin"]
 [signal arg="end"]
 [wait time="1.0"]
+[signal arg="coffeewin"]
 [end_timeline]
 label gameover
 [wait time="2.0"]

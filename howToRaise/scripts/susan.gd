@@ -2,10 +2,13 @@ extends AnimatedSprite2D
 
 
 @onready var interaction_area: InteractionArea = $InteractionArea
+@onready var playerInv = preload("res://inventory/player_inv.tres")
 
 # prevent player from initiating dialogue during dialogue
 var dialogRunning = false
 var spoken = false
+# item that NPC can use from player inventory
+var item_idx = 0
 
 
 # example on how to receive dialogic signal

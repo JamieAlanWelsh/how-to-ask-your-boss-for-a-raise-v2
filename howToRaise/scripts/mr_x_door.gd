@@ -1,8 +1,10 @@
 extends Node2D
 
 @onready var interaction_area: InteractionArea = $interactionArea
+@onready var playerInv = preload("res://inventory/player_inv.tres")
 
-
+# item that NPC can use from player inventory
+var item_idx = 1
 # prevent player from initiating dialogue during dialogue
 var dialogRunning = false
 
@@ -23,4 +25,6 @@ func _DialogicSignalReceiver(arg: String):
 
 func _on_interact():
 	if !dialogRunning:
+		if playerInv.check_for_item(item_idx):
+			Dialogic.VAR.has_photos = true
 		Dialogic.start("mrX_door")
