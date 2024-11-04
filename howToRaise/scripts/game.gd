@@ -1,14 +1,13 @@
 extends Node2D
 
-@onready var red_overlay = $CanvasLayer/RedOverlay
-@onready var restart_button = $CanvasLayer/RedOverlay/RestartButton
+@onready var red_overlay = $CanvasLayer/ColorOverlay
+@onready var restart_button = $CanvasLayer/RestartButton
 #@onready var coffee_object = $Coffee
 @onready var mrX = $mrXOffice
 
 
 # example on how to receive dialogic signal
 func _ready():
-	#coffee_object.visible = false
 	red_overlay.visible = false
 	restart_button.visible = false
 	
@@ -25,10 +24,9 @@ func _DialogicSignalReceiver(arg: String):
 	if arg == "gameover":
 		print('sucker')
 		gameover_screen()
-	#elif arg == "coffeewin":
-		## make coffee visible and allow player to pick it up
-		#print('grab that coffee!')
-		#coffee_object.visible = true
+	elif arg == "gamewin":
+		print('congrats')
+		gamewin_screen()
 
 
 # to pass to camera
@@ -42,7 +40,16 @@ func _process(delta: float) -> void:
 
 
 func gameover_screen():
-	red_overlay.visible = true  # Make the red overlay visible
+	red_overlay.color = Color(1, 0, 0, 0.5) # RGB
+	restart_button.text = 'You Failed!\n\nPress R to Restart'
+	red_overlay.visible = true  
+	restart_button.visible = true
+
+
+func gamewin_screen():
+	red_overlay.color = Color(0, 0.8, 0, 0.5)  # RGB
+	restart_button.text = 'You Won!!!\n\nPress R to Restart'
+	red_overlay.visible = true 
 	restart_button.visible = true
 
 

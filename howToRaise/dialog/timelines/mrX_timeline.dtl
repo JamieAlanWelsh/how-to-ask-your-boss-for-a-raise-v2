@@ -1,3 +1,5 @@
+[signal arg="start"]
+- Monologue
 Why should you get a raise?
 - Been with the company for years
 	jump professor
@@ -12,7 +14,7 @@ Why should you get a raise?
 			jump lunch
 	- No
 		label lunch
-		Hmmm, interesting... What was on the lunch menu today?
+		Hmmm, interesting... And what was on the lunch menu today?
 		- Eggs
 			Were they off?
 			- Yes
@@ -55,7 +57,7 @@ What about Mr X's daughters, any of them have measles?
 	- No
 		jump measlesInfected
 label ask
-You stifle your nerves and present your case, ultimately asking for a raise.
+You stifle your nerves and present your case, ultimately asking your boss for a raise.
 Are you given reasons for hoping?
 - Yes
 - No
