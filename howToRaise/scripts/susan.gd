@@ -1,6 +1,5 @@
 extends AnimatedSprite2D
 
-
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var playerInv = preload("res://inventory/player_inv.tres")
 
@@ -21,12 +20,26 @@ func _ready():
 func _DialogicSignalReceiver(arg: String):
 	if arg == "start":
 		dialogRunning = true
+		interaction_area.monitoring = false
 	elif arg == "end":
 		dialogRunning = false
+		interaction_area.monitoring = true
 	elif arg == "coffeewin":
 		spoken = true
 		interaction_area.monitoring = false
-		# change animation to susan smiling
+	elif arg == "susanblush":
+		self.play("blush")
+	elif arg == "susansus":
+		self.play("sus")
+		await get_tree().create_timer(3).timeout
+		interaction_area.monitoring = true
+		interaction_area.action_name = "Are you good...?"
+		# wait 5 seconds
+		await get_tree().create_timer(3).timeout
+		interaction_area.monitoring = false
+		await get_tree().create_timer(3).timeout
+		interaction_area.monitoring = true
+		interaction_area.action_name = "Whatever..."
 
 
 func _on_interact():

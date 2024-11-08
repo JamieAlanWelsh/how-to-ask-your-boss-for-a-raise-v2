@@ -1,42 +1,42 @@
 [gd_scene load_steps=10 format=3 uid="uid://cy74tjo0mv1cm"]
 
-[ext_resource type="Texture2D" uid="uid://bh6ldasfmr2b6" path="res://assets/sprites/slime_purple.png" id="1_jiroe"]
+[ext_resource type="Texture2D" uid="uid://dcg3dloxvn58d" path="res://assets/sprites/mrX.png" id="1_y6mdy"]
 [ext_resource type="Script" path="res://scripts/mr_x.gd" id="2_epkap"]
 [ext_resource type="PackedScene" uid="uid://dlu0t5hq054tk" path="res://interaction/interaction area/interaction_area.tscn" id="2_jrgci"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b7krm"]
-atlas = ExtResource("1_jiroe")
-region = Rect2(0, 0, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lekcy"]
+atlas = ExtResource("1_y6mdy")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_05hlc"]
-atlas = ExtResource("1_jiroe")
-region = Rect2(24, 0, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o4bb"]
+atlas = ExtResource("1_y6mdy")
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dbm70"]
-atlas = ExtResource("1_jiroe")
-region = Rect2(48, 0, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_aagtv"]
+atlas = ExtResource("1_y6mdy")
+region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ptchx"]
-atlas = ExtResource("1_jiroe")
-region = Rect2(72, 0, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_h44fm"]
+atlas = ExtResource("1_y6mdy")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7mgvk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b7krm")
+"texture": SubResource("AtlasTexture_lekcy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_05hlc")
+"texture": SubResource("AtlasTexture_6o4bb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dbm70")
+"texture": SubResource("AtlasTexture_aagtv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ptchx")
+"texture": SubResource("AtlasTexture_h44fm")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -46,14 +46,16 @@ size = Vector2(57, 66)
 [node name="mrX" type="AnimatedSprite2D"]
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_7mgvk")
-autoplay = "default"
-frame = 3
-frame_progress = 0.203142
+animation = &"idle"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.208955
 script = ExtResource("2_epkap")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_jrgci")]
+position = Vector2(0, -2)
 action_name = "Yes...?"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(-18.5, -16)
+position = Vector2(-18.5, -14)
 shape = SubResource("RectangleShape2D_54w8u")

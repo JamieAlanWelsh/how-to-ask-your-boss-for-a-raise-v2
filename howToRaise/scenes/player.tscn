@@ -97,12 +97,12 @@ animations = [{
 "texture": SubResource("AtlasTexture_a0q5o")
 }],
 "loop": true,
-"name": &"move",
-"speed": 8.0
+"name": &"run",
+"speed": 9.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gvm8e"]
-radius = 5.0
+radius = 5.02494
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -113,10 +113,10 @@ inv = ExtResource("2_ia7kp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_r3uql")
-animation = &"move"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.0932154
+frame_progress = 0.895154
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(0, -10.5)
 shape = SubResource("CircleShape2D_gvm8e")

@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var red_overlay = $CanvasLayer/ColorOverlay
 @onready var restart_button = $CanvasLayer/RestartButton
-#@onready var coffee_object = $Coffee
 @onready var mrX = $mrXOffice
 
 
@@ -17,6 +16,10 @@ func _ready():
 	load("res://dialogicCustomLayer/base_style.tres").prepare()
 	Dialogic.preload_timeline("res://dialog/timelines/enter_missY_office.dtl")
 	Dialogic.preload_timeline("res://dialog/timelines/missY_timeline.dtl")
+	Dialogic.preload_timeline("res://dialog/timelines/enter_kitchen.dtl")
+	Dialogic.preload_timeline("res://dialog/timelines/susan_timeline.dtl")
+	Dialogic.preload_timeline("res://dialog/timelines/mrX_door.dtl")
+	Dialogic.preload_timeline("res://dialog/timelines/mrX_timeline.dtl")
 
 
 # gets signals from dialogic timelines

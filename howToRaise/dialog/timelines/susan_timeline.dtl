@@ -3,7 +3,7 @@ You approach Susan. She glances up, flashing you a brief smile.\
 [br]\
 Well, this was a brilliant idea... what on earth are you going to do now?!
 - Relax, I got this
-	Alright hot stuff, let him cook!
+	Alright, hot stuff - you’ve got this!
 	- Make some coffee
 		You stand beside Susan and flick the kettle on with a touch of flair.\
 [br]\
@@ -17,6 +17,7 @@ Wait, you don't even drink coffee, what were you thinking?!
 					label coffee2
 					That definitely looks like some kind of beverage...
 					[wait time="1.5"]
+					[signal arg="susanblush"]
 					Susan smiles at you sweetly, smooth moves!
 					jump coffeewin
 				- A splash
@@ -45,6 +46,7 @@ Wow, I think I just threw up in my mouth, nice one!
 		label monologue
 		Woah, don't take it out on me buddy, I'm just a voice in your head
 		- Wait, what's happening...?
+			[signal arg="susansus"]
 			Let's play rock paper scissors
 			- Rock
 				label rps

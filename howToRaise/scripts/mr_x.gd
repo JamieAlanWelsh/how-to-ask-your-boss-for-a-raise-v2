@@ -21,8 +21,10 @@ func _ready():
 func _DialogicSignalReceiver(arg: String):
 	if arg == "start":
 		dialogRunning = true
+		interaction_area.monitoring = false
 	elif arg == "end":
 		dialogRunning = false
+		interaction_area.monitoring = true
 
 
 func _on_interact():

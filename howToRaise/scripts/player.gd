@@ -18,6 +18,7 @@ func _ready():
 func _DialogicSignalReceiver(arg: String):
 	if arg == "start":
 		is_paused = true
+		animated_sprite.play("idle")
 	elif arg == "end":
 		is_paused = false
 	#elif arg == "enterMrX":
@@ -40,6 +41,12 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = false  # Face right
 	elif direction < 0:
 		animated_sprite.flip_h = true   # Face left
+	
+	# add move animation
+	if direction == 0:
+		animated_sprite.play("idle")
+	else:
+		animated_sprite.play("run")
 	
 	# apply movement
 	if direction:

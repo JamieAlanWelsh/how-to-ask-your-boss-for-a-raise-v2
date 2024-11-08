@@ -33,6 +33,7 @@ What about Mr X's daughters, any of them have measles?
 	label measlesInfected
 	Is his face spotty?
 	- Sigh... Yes
+		[wait time="1.0"]
 		You make a rapid exit. EMERGENCY! You put Mr X in quarantine for 40 days.
 		jump gameover
 - No
