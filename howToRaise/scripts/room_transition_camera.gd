@@ -13,7 +13,7 @@ const RoomShift = 63
 @onready var root = get_tree().root.get_node("Game")
 
 # initialise the current room the camera is pointing at
-var m_CurrentRoom : Vector2 = Vector2.ZERO
+var m_CurrentRoom : Vector2 = Vector2(0,8)
 # prevent warping off map
 var roomShiftCount = 0
 var rightMost = 1
@@ -37,7 +37,9 @@ func _DialogicSignalReceiver(arg: String):
 # update camera position when player collides with edges
 func _updateCameraPosition(direction : Vector2) -> void:
 	m_CurrentRoom += direction
-	set_position(m_CurrentRoom * Vector2(m_CameraHorizontalMovement, 0))
+	print(m_CurrentRoom)
+	print(m_CurrentRoom * Vector2(m_CameraHorizontalMovement, 1))
+	set_position(m_CurrentRoom * Vector2(m_CameraHorizontalMovement, 1))
 
 
 # NOT BEING USED
