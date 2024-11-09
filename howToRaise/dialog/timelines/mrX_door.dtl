@@ -2,6 +2,7 @@
 Your boss, Mr. X's office...
 - Knock
 	if {has_photos} == true:
+		[signal arg="choiceWin"]
 		Mr. X looks up affirmatively, ushering you to enter
 		[wait time="1.0"]
 		[signal arg="enterMrX"]

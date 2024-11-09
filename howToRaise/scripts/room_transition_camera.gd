@@ -43,16 +43,16 @@ func _updateCameraPosition(direction : Vector2) -> void:
 
 
 # NOT BEING USED
-func _pauseCollisions() -> void:
-	#$CollisionAreaRight.monitoring = false
-	#$CollisionAreaLeft.monitoring = false
-	$CollisionAreaRight.set_deferred('monitoring',false)
-	$CollisionAreaLeft.set_deferred('monitoring',false)
-	await get_tree().create_timer(2).timeout
-	#$CollisionAreaRight.monitoring = true
-	#$CollisionAreaLeft.monitoring = true
-	$CollisionAreaRight.set_deferred('monitoring',true)
-	$CollisionAreaLeft.set_deferred('monitoring',true)
+#func _pauseCollisions() -> void:
+	##$CollisionAreaRight.monitoring = false
+	##$CollisionAreaLeft.monitoring = false
+	#$CollisionAreaRight.set_deferred('monitoring',false)
+	#$CollisionAreaLeft.set_deferred('monitoring',false)
+	#await get_tree().create_timer(2).timeout
+	##$CollisionAreaRight.monitoring = true
+	##$CollisionAreaLeft.monitoring = true
+	#$CollisionAreaRight.set_deferred('monitoring',true)
+	#$CollisionAreaLeft.set_deferred('monitoring',true)
 
 
 func _onBodyEnteredRight(body: Node2D) -> void:

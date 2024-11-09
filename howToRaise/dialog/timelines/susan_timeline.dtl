@@ -17,6 +17,7 @@ Wait, you don't even drink coffee, what were you thinking?!
 					label coffee2
 					That definitely looks like some kind of beverage...
 					[wait time="1.5"]
+					[signal arg="choiceWin"]
 					[signal arg="susanblush"]
 					Susan smiles at you sweetly, smooth moves!
 					jump coffeewin

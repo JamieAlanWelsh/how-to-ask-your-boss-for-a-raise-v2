@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cmbd4gq8lgwrb"]
+[gd_scene load_steps=29 format=3 uid="uid://cmbd4gq8lgwrb"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4wige"]
 [ext_resource type="PackedScene" uid="uid://cjrbcm6qsjdn1" path="res://scenes/coffee.tscn" id="1_j7y3i"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://cgimt62ucwid0" path="res://scenes/susan.tscn" id="11_bha0l"]
 [ext_resource type="PackedScene" uid="uid://dgdgep4886abb" path="res://scenes/mr_x_door.tscn" id="12_3edhi"]
 [ext_resource type="PackedScene" uid="uid://bk3a11f4hcl2h" path="res://scenes/photos.tscn" id="14_rumwe"]
+[ext_resource type="AudioStream" uid="uid://d3fdufy12mb54" path="res://assets/sounds/333785__aceofspadesproduc100__8-bit-failure-sound.wav" id="15_3iyx0"]
+[ext_resource type="AudioStream" uid="uid://y2twp482kwc3" path="res://assets/sounds/609336__kenneth_cooney__completed.wav" id="16_2mxls"]
+[ext_resource type="AudioStream" uid="uid://ck4p637sstt23" path="res://assets/sounds/609335__kenneth_cooney__levelup.wav" id="17_3cpeu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y4eku"]
 texture = ExtResource("4_rmqr0")
@@ -1816,8 +1819,8 @@ layer_0/tile_data = PackedInt32Array(65537, 655360, 32, 131073, 655360, 33, 6553
 [node name="ColorOverlay" type="ColorRect" parent="CanvasLayer"]
 visible = false
 offset_right = 1154.0
-offset_bottom = 644.0
-color = Color(0, 0.713726, 0, 1)
+offset_bottom = 648.0
+color = Color(0, 0.509804, 0.203922, 1)
 
 [node name="RestartButton" type="Button" parent="CanvasLayer"]
 visible = false
@@ -1945,6 +1948,16 @@ position = Vector2(-600.504, 36.406)
 
 [node name="Photos" parent="." instance=ExtResource("14_rumwe")]
 position = Vector2(295.496, 36.406)
+
+[node name="sfxFail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_3iyx0")
+volume_db = -12.0
+
+[node name="sfxWin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_2mxls")
+
+[node name="sfxChoiceWin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_3cpeu")
 
 [connection signal="body_entered" from="RoomTransitionCamera/CollisionAreaRight" to="RoomTransitionCamera" method="_onBodyEnteredRight"]
 [connection signal="body_entered" from="RoomTransitionCamera/CollisionAreaLeft" to="RoomTransitionCamera" method="_OnBodyEnteredLeft"]

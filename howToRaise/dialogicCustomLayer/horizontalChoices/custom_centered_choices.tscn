@@ -54,12 +54,10 @@ offset_top = -47.0
 offset_right = 42.5
 offset_bottom = 47.0
 grow_horizontal = 2
-grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/separation = 20
 alignment = 1
 metadata/_edit_layout_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="DialogicNode_ChoiceButton1" type="Button" parent="Choices"]
 layout_mode = 2

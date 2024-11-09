@@ -15,6 +15,7 @@ Honestly... when she’s not busy being a storm cloud, she's almost charming.
 - Try to distract her | [if true == true]
 	if {has_apple}:
 		set {has_apple} = false
+		[signal arg="choiceWin"]
 		Seizing the moment, you “accidentally” send a cascade of hot coffee splashing across her face. She roars in pain like a wounded beast, and - well, if ever there was a time to make your move, this is it!
 		- Grab the photos
 			jump gameover
@@ -25,6 +26,7 @@ Honestly... when she’s not busy being a storm cloud, she's almost charming.
 [br]\
 Yikes… even you have to admit, that’s a new low.
 				[wait time="1.0"]
+				[signal arg="choiceWin"]
 				[signal arg="miss_y_down"]
 			- Maybe the phone instead...
 				jump gameover

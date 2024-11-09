@@ -1,9 +1,12 @@
 extends Node2D
 
-@onready var red_overlay = $CanvasLayer/ColorOverlay
+@onready var endOverlay = $CanvasLayer/ColorOverlay
 @onready var restart_button = $CanvasLayer/RestartButton
 @onready var mrX = $mrXOffice
 @onready var controlsText = $CanvasLayer/Controls
+@onready var sfxWin = $sfxWin
+@onready var sfxFail = $sfxFail
+@onready var sfxChoiceWin = $sfxChoiceWin
 @onready var roomCollisions = get_node("roomCollisions")
 @onready var transitionCam = get_node("RoomTransitionCamera")
 @onready var coffee = get_node("Coffee")
@@ -12,7 +15,7 @@ extends Node2D
 # example on how to receive dialogic signal
 func _ready():
 	# UI
-	red_overlay.visible = false
+	endOverlay.visible = false
 	restart_button.visible = false
 	# signals for UI
 	roomCollisions.connect("fireInteractControls", _roomCollisionsSignalReceiver)
@@ -41,11 +44,13 @@ func _DialogicSignalReceiver(arg: String):
 	if arg == "start":
 		controlsText.visible = false
 	elif arg == "gameover":
-		print('sucker')
+		sfxFail.play()
 		gameover_screen()
 	elif arg == "gamewin":
-		print('congrats')
+		sfxWin.play()
 		gamewin_screen()
+	elif arg == "choiceWin":
+		sfxChoiceWin.play()
 
 
 func _load_timelines() -> void:
@@ -70,22 +75,22 @@ func _process(delta: float) -> void:
 
 
 func gameover_screen():
-	red_overlay.color = Color(1, 0, 0, 0.5) # RGB
+	endOverlay.color = Color(1, 0, 0, 0.5) # RGB
 	restart_button.text = 'You Failed!\n\nPress R to Restart'
-	red_overlay.visible = true  
+	endOverlay.visible = true  
 	restart_button.visible = true
 
 
 func gamewin_screen():
-	red_overlay.color = Color(0, 0.8, 0, 0.5)  # RGB
+	endOverlay.color = Color(0, 1, 0.25, 0.5)  # RGB
 	restart_button.text = 'You Won!!!\n\nPress R to Restart'
-	red_overlay.visible = true 
+	endOverlay.visible = true 
 	restart_button.visible = true
 
 
 # allows player to restart the game on gameover screen
 func _input(event):
-	if event.is_action_pressed("restart") and red_overlay.visible:
+	if event.is_action_pressed("restart") and endOverlay.visible:
 		restart_game()
 
 

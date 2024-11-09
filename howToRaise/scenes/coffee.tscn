@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjrbcm6qsjdn1"]
+[gd_scene load_steps=7 format=3 uid="uid://cjrbcm6qsjdn1"]
 
 [ext_resource type="Texture2D" uid="uid://dbar7mirhvttp" path="res://assets/sprites/pick_ups.png" id="1_hlivh"]
 [ext_resource type="PackedScene" uid="uid://dlu0t5hq054tk" path="res://interaction/interaction area/interaction_area.tscn" id="2_0aeeb"]
 [ext_resource type="Script" path="res://scripts/coffee.gd" id="2_41gda"]
 [ext_resource type="Resource" uid="uid://c2aot1oa8nkpg" path="res://inventory/items/coffee.tres" id="3_chc3y"]
+[ext_resource type="AudioStream" uid="uid://bm0r8eqstmgu7" path="res://assets/sounds/coin.wav" id="5_0uqr8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iqm1t"]
 size = Vector2(20, 38)
@@ -22,3 +23,7 @@ action_name = "Coffee!"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_iqm1t")
+
+[node name="sfxPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_0uqr8")
+volume_db = -10.0

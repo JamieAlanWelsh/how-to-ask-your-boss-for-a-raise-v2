@@ -2,6 +2,7 @@ extends Sprite2D
 
 
 @onready var interaction_area: InteractionArea = $InteractionArea
+@onready var sfxPickup = $sfxPickup
 @export var item: InvItem
 @onready var playerInv = preload("res://inventory/player_inv.tres")
 
@@ -29,4 +30,5 @@ func _on_interact():
 	playerInv.insert(item,inv_insert)
 	visible = false
 	interaction_area.monitoring = false
+	sfxPickup.play()
 	emit_signal("coffeePicked")

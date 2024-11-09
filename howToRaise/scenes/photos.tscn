@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bk3a11f4hcl2h"]
+[gd_scene load_steps=7 format=3 uid="uid://bk3a11f4hcl2h"]
 
 [ext_resource type="Texture2D" uid="uid://dbar7mirhvttp" path="res://assets/sprites/pick_ups.png" id="1_rr1cn"]
 [ext_resource type="PackedScene" uid="uid://dlu0t5hq054tk" path="res://interaction/interaction area/interaction_area.tscn" id="2_i0xv8"]
 [ext_resource type="Script" path="res://photos.gd" id="2_mb8sh"]
 [ext_resource type="Resource" uid="uid://dmt2mnynls764" path="res://inventory/items/photos.tres" id="3_u766a"]
+[ext_resource type="AudioStream" uid="uid://bm0r8eqstmgu7" path="res://assets/sounds/coin.wav" id="5_rf1a6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4hyj"]
 size = Vector2(23, 43)
@@ -22,3 +23,7 @@ action_name = "Photos!"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(-3, 3)
 shape = SubResource("RectangleShape2D_c4hyj")
+
+[node name="sfxPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_rf1a6")
+volume_db = -10.0

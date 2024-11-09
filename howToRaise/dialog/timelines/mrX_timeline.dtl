@@ -45,6 +45,7 @@ What about Mr X's daughters, any of them have measles?
 			- Ask for a raise
 				jump ask
 			- One more thing
+				[signal arg="choiceWin"]
 				You stride up to Mr. X’s desk and slap the photos down in front of him. His face pales, eyes widening with desperation as he realises that they reveal explicit evidence of his affair with Miss Y.
 				You know what to do
 				- Blackmail
