@@ -8,7 +8,7 @@
 custom_minimum_size = Vector2(24, 86)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 24.0
+offset_right = 46.0
 offset_bottom = 86.0
 script = ExtResource("1_5w2l4")
 

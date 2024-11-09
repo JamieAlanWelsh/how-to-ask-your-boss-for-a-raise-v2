@@ -1859,6 +1859,17 @@ text = "
 A / D to move"
 horizontal_alignment = 1
 
+[node name="invUI" parent="CanvasLayer" instance=ExtResource("7_0gp3x")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -197.0
+offset_top = 42.0
+offset_right = -171.0
+offset_bottom = 128.0
+grow_horizontal = 0
+scale = Vector2(3, 3)
+
 [node name="mrXOffice" type="Node2D" parent="."]
 position = Vector2(-304.504, -439.594)
 
@@ -1870,18 +1881,6 @@ position = Vector2(0, 8)
 zoom = Vector2(3.6, 3.6)
 position_smoothing_enabled = true
 script = ExtResource("2_0wr3o")
-
-[node name="invUI" parent="RoomTransitionCamera" instance=ExtResource("7_0gp3x")]
-anchors_preset = -1
-anchor_left = 0.386
-anchor_top = 0.279
-anchor_right = 0.386
-anchor_bottom = 0.279
-offset_left = 107.496
-offset_top = -80.594
-offset_right = 133.496
-offset_bottom = 5.406
-metadata/_edit_use_anchors_ = true
 
 [node name="CollisionAreaRight" type="Area2D" parent="RoomTransitionCamera"]
 collision_layer = 4
