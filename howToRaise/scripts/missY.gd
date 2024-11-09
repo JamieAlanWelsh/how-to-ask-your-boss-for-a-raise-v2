@@ -12,17 +12,12 @@ var dialogRunning = false
 var spoken = false
 
 
-# if the line isn't enough characters then the code will break
-const lines: Array[String] = [
-	"Hey there!",
-	"Ya like jazz?",
-	"I sure as heck do!"
-	]
-
-
-const lines_with_item: Array[String] = [
-	"I can see your apple"
-	]
+# NO LONGER USED
+#const lines: Array[String] = [
+	#"Hey there!",
+	#"Ya like jazz?",
+	#"I sure as heck do!"
+	#]
 
 
 # example on how to receive dialogic signal
@@ -38,12 +33,14 @@ func _DialogicSignalReceiver(arg: String):
 		interaction_area.monitoring = false
 	elif arg == "end":
 		dialogRunning = false
-		interaction_area.monitoring = true
+		if !spoken:
+			interaction_area.monitoring = true
 	elif arg == "miss_y_down":
+		sprite.play("death")
+		dialogRunning = false
 		spoken = true
 		interaction_area.monitoring = false
 		playerInv.use(item_idx)
-		# switch animation to death
 
 
 func _on_interact():

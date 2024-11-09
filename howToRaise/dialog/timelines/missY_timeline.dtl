@@ -24,7 +24,6 @@ Honestly... when she’s not busy being a storm cloud, she's almost charming.
 				You bring the photo down over her head. She collapses to the ground.\
 [br]\
 Yikes… even you have to admit, that’s a new low.
-				# signal triggers death animation and allows player to grab photos
 				[wait time="1.0"]
 				[signal arg="miss_y_down"]
 			- Maybe the phone instead...

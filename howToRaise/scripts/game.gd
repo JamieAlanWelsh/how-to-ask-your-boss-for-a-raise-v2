@@ -26,14 +26,14 @@ func _ready():
 
 func _roomCollisionsSignalReceiver():
 	controlsText.visible = true
-	controlsText.text = "\nE to interact"
+	controlsText.text = "SPACE or E to interact"
 
 func _cameraSignalReceiver():
 	controlsText.visible = false
 	
 func _coffeeSignalReceiver():
 	controlsText.visible = true
-	controlsText.text = "TAB to open inventory"
+	controlsText.text = "Press TAB to open inventory"
 
 
 # gets signals from dialogic timelines
