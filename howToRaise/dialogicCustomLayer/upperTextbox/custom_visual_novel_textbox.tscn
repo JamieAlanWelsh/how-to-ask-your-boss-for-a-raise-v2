@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://dialogicCustomLayer/upperTextbox/vn_textbox_layer.gd" id="1_bpydr"]
 [ext_resource type="Script" path="res://dialogicCustomLayer/upperTextbox/animations.gd" id="2_xy7a2"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_4634k"]
-[ext_resource type="StyleBox" uid="uid://dg4x1mpvurla6" path="res://dialogicCustomLayer/upperTextbox/textbox_background.tres" id="3_jpg8n"]
+[ext_resource type="StyleBox" uid="uid://dkv1pl1c1dq6" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_default_panel.tres" id="3_ssa84"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="4_ma5mw"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_next_indicator.gd" id="5_40a50"]
 [ext_resource type="Script" path="res://dialogicCustomLayer/upperTextbox/autoadvance_indicator.gd" id="6_07xym"]
@@ -276,9 +276,8 @@ offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = ExtResource("3_jpg8n")
+theme_override_styles/panel = ExtResource("3_ssa84")
 metadata/_edit_layout_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="DialogicNode_DialogText" type="RichTextLabel" parent="Anchor/AnimationParent/Sizer/DialogTextPanel" node_paths=PackedStringArray("textbox_root")]
 unique_name_in_owner = true
