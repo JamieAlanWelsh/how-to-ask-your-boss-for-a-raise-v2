@@ -6,7 +6,6 @@ const HORIZONTAL_OFFSET : int = -64
 const VERTICAL_OFFSET : int = 0
 const RoomShift = 63
 
-
 @onready var m_CameraHorizontalMovement : int = (get_viewport_rect().size.x - HORIZONTAL_OFFSET) / 4
 @onready var player = get_tree().get_first_node_in_group("player")
 # to get mr X pos
@@ -18,6 +17,9 @@ var m_CurrentRoom : Vector2 = Vector2(0,8)
 var roomShiftCount = 0
 var rightMost = 1
 var leftMost = -2
+
+signal roomMoved
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,8 +39,6 @@ func _DialogicSignalReceiver(arg: String):
 # update camera position when player collides with edges
 func _updateCameraPosition(direction : Vector2) -> void:
 	m_CurrentRoom += direction
-	print(m_CurrentRoom)
-	print(m_CurrentRoom * Vector2(m_CameraHorizontalMovement, 1))
 	set_position(m_CurrentRoom * Vector2(m_CameraHorizontalMovement, 1))
 
 
@@ -57,6 +57,7 @@ func _pauseCollisions() -> void:
 
 func _onBodyEnteredRight(body: Node2D) -> void:
 	if roomShiftCount < rightMost:
+		emit_signal("roomMoved")
 		roomShiftCount += 1
 		_updateCameraPosition(Vector2.RIGHT)
 		player.position.x += RoomShift
@@ -65,6 +66,7 @@ func _onBodyEnteredRight(body: Node2D) -> void:
 
 func _OnBodyEnteredLeft(body: Node2D) -> void:
 	if roomShiftCount > leftMost:
+		emit_signal("roomMoved")
 		roomShiftCount -= 1
 		_updateCameraPosition(Vector2.LEFT)
 		player.position.x -= RoomShift

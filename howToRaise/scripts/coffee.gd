@@ -7,6 +7,8 @@ extends Sprite2D
 
 var inv_insert = 0
 
+signal coffeePicked
+
 
 func _ready():
 	visible = false
@@ -27,3 +29,4 @@ func _on_interact():
 	playerInv.insert(item,inv_insert)
 	visible = false
 	interaction_area.monitoring = false
+	emit_signal("coffeePicked")

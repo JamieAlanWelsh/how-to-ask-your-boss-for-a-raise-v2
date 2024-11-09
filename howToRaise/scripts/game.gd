@@ -3,15 +3,52 @@ extends Node2D
 @onready var red_overlay = $CanvasLayer/ColorOverlay
 @onready var restart_button = $CanvasLayer/RestartButton
 @onready var mrX = $mrXOffice
+@onready var controlsText = $CanvasLayer/Controls
+@onready var roomCollisions = get_node("roomCollisions")
+@onready var transitionCam = get_node("RoomTransitionCamera")
+@onready var coffee = get_node("Coffee")
 
 
 # example on how to receive dialogic signal
 func _ready():
+	# UI
 	red_overlay.visible = false
 	restart_button.visible = false
+	# signals for UI
+	roomCollisions.connect("fireInteractControls", _roomCollisionsSignalReceiver)
+	transitionCam.connect("roomMoved", _cameraSignalReceiver)
+	coffee.connect("coffeePicked", _coffeeSignalReceiver)
 	
+	# dialogic
 	Dialogic.signal_event.connect(_DialogicSignalReceiver)
+	_load_timelines()
+
+
+func _roomCollisionsSignalReceiver():
+	controlsText.visible = true
+	controlsText.text = "\nE to interact"
+
+func _cameraSignalReceiver():
+	controlsText.visible = false
 	
+func _coffeeSignalReceiver():
+	controlsText.visible = true
+	controlsText.text = "TAB to open inventory"
+
+
+# gets signals from dialogic timelines
+func _DialogicSignalReceiver(arg: String):
+	if arg == "start":
+		controlsText.visible = false
+	elif arg == "gameover":
+		print('sucker')
+		gameover_screen()
+	elif arg == "gamewin":
+		print('congrats')
+		gamewin_screen()
+
+
+func _load_timelines() -> void:
 	# preloading styles for performance
 	load("res://dialogicCustomLayer/base_style.tres").prepare()
 	Dialogic.preload_timeline("res://dialog/timelines/enter_missY_office.dtl")
@@ -20,16 +57,6 @@ func _ready():
 	Dialogic.preload_timeline("res://dialog/timelines/susan_timeline.dtl")
 	Dialogic.preload_timeline("res://dialog/timelines/mrX_door.dtl")
 	Dialogic.preload_timeline("res://dialog/timelines/mrX_timeline.dtl")
-
-
-# gets signals from dialogic timelines
-func _DialogicSignalReceiver(arg: String):
-	if arg == "gameover":
-		print('sucker')
-		gameover_screen()
-	elif arg == "gamewin":
-		print('congrats')
-		gamewin_screen()
 
 
 # to pass to camera

@@ -31,15 +31,15 @@ func _DialogicSignalReceiver(arg: String):
 		self.play("blush")
 	elif arg == "susansus":
 		self.play("sus")
-		await get_tree().create_timer(3).timeout
-		interaction_area.monitoring = true
-		interaction_area.action_name = "Are you good...?"
-		# wait 5 seconds
-		await get_tree().create_timer(3).timeout
-		interaction_area.monitoring = false
-		await get_tree().create_timer(3).timeout
-		interaction_area.monitoring = true
-		interaction_area.action_name = "Whatever..."
+		#await get_tree().create_timer(3).timeout
+		#interaction_area.monitoring = true
+		#interaction_area.action_name = "Are you good...?"
+		## wait 5 seconds
+		#await get_tree().create_timer(3).timeout
+		#interaction_area.monitoring = false
+		#await get_tree().create_timer(3).timeout
+		#interaction_area.monitoring = true
+		#interaction_area.action_name = "Whatever..."
 
 
 func _on_interact():

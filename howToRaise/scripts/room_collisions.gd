@@ -1,22 +1,22 @@
 extends Node2D
 
+@onready var missY_collisions = $CollisionMissYOffice
 
-# to prevent narration repeating each time you enter the room
-var missY_entered = false
-var kitchen_entered = false
+
+signal fireInteractControls
 
 
 func _onMissYOffficeEntered(body: Node2D) -> void:
-	if !missY_entered:
-		Dialogic.start("enter_missY_office")
-		missY_entered = true
-	else:
-		pass
+	Dialogic.start("enter_missY_office")
+	$CollisionMissYOffice.set_deferred('monitoring',false)
 
 
 func _onKitchenEntered(body: Node2D) -> void:
-	if !kitchen_entered:
-		Dialogic.start("enter_kitchen")
-		kitchen_entered = true
-	else:
-		pass
+	Dialogic.start("enter_kitchen")
+	$CollisionKitchen.set_deferred('monitoring',false)
+
+
+func _showInteractControl(body: Node2D) -> void:
+	print('hello')
+	emit_signal("fireInteractControls")
+	$InteractCollisions.set_deferred('monitoring',false)
