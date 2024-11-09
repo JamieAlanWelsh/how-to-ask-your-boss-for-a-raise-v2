@@ -1816,14 +1816,23 @@ layer_0/tile_data = PackedInt32Array(65537, 655360, 32, 131073, 655360, 33, 6553
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="invUI" parent="CanvasLayer" instance=ExtResource("7_0gp3x")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -197.0
+offset_top = 42.0
+offset_right = -171.0
+offset_bottom = 128.0
+grow_horizontal = 0
+scale = Vector2(3, 3)
+
 [node name="ColorOverlay" type="ColorRect" parent="CanvasLayer"]
-visible = false
 offset_right = 1154.0
 offset_bottom = 648.0
 color = Color(0, 0.509804, 0.203922, 1)
 
 [node name="RestartButton" type="Button" parent="CanvasLayer"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1861,17 +1870,6 @@ theme_override_font_sizes/font_size = 24
 text = "
 A / D to move"
 horizontal_alignment = 1
-
-[node name="invUI" parent="CanvasLayer" instance=ExtResource("7_0gp3x")]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -197.0
-offset_top = 42.0
-offset_right = -171.0
-offset_bottom = 128.0
-grow_horizontal = 0
-scale = Vector2(3, 3)
 
 [node name="mrXOffice" type="Node2D" parent="."]
 position = Vector2(-304.504, -439.594)
