@@ -9,5 +9,6 @@ Oh hey, it's Susan! Seems she's in the midst of brewing some coffee...  You shou
 		[signal arg="gameover"]
 	- Alright fine, let's do this!
 - Here goes nothing...
+[wait time="0.5"]
 [signal arg="end"]
 [wait time="1.0"]

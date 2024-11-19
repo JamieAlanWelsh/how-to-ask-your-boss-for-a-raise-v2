@@ -8,6 +8,7 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 const RoomShift = 63
 var is_paused = false
+var gameEnd = false
 
 
 func _ready():
@@ -21,9 +22,10 @@ func _DialogicSignalReceiver(arg: String):
 		animated_sprite.play("idle")
 	elif arg == "end":
 		is_paused = false
-	#elif arg == "enterMrX":
-		#var target_position = Vector2(-21, -25)
-		#position = target_position
+	elif arg == "gamewin":
+		gameEnd = true
+	elif arg == "gameover":
+		gameEnd = true
 
 
 func _physics_process(delta: float) -> void:
@@ -31,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	if is_paused:
+	if is_paused or gameEnd:
 		return # skip movement if paused
 
 	var direction := Input.get_axis("move_left", "move_right")

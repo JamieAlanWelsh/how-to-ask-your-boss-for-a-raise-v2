@@ -1,4 +1,5 @@
 [signal arg="start"]
 You step into Miss Y’s office and pause, noticing the corner of some photos slipped carelessly beneath her stack of documents. Curious…
+[wait time="0.5"]
 [signal arg="end"]
 [wait time="1.0"]

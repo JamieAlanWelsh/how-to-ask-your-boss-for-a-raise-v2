@@ -6,8 +6,7 @@ You saunter up to Miss Y with casual indifference - though, judging by her expre
 		She releases an exaggerated sigh, her gaze turning syrupy, hope glinting in her eyes that you might improve her day.\
 Honestly... when she’s not busy being a storm cloud, she's almost charming.
 		- Give her a hug
-			Miss Y erupts in fury. Before you can so much as blink, you're flipped upside down, and your face makes an unfortunate acquaintance with her desk. The last thing you register is the hardwood’s warm embrace before everything fades to black.
-			[signal arg="gameover"]
+			jump gameover
 		- Show her a funny video
 			You present her with a collection of ridiculous cat videos you curated during your morning toilet run. Together, you share a laugh, and - surprise, surprise - she actually looks a bit cheerier now.
 	- Nah, I'm good
